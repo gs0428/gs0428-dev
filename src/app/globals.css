@@ -2,7 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bouncing {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-20px);
+  }
+  20% {
+    transform: translateY(0);
+  }
+}
+
+:root {
   margin: 0;
   padding: 0;
+  background-color: #ece7e2;
+  color: #260101;
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+}
+
+body {
+  height: 100vh;
+}
+
+#introduce {
+  animation: fadeIn 1s ease-in-out 0.5s;
+}
+
+#javascript,
+#typescript,
+#react,
+#next,
+#tanstack {
+  animation: bouncing 5s ease-in-out infinite 1.5s;
+}
+
+#typescript {
+  animation-delay: 2.5s;
+}
+#react {
+  animation-delay: 3.5s;
+}
+#next {
+  animation-delay: 4.5s;
+}
+#tanstack {
+  animation-delay: 5.5s;
 }
